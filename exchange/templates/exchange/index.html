@@ -1,0 +1,16 @@
+{% extends 'exchange/base.html' %}
+{% block content %}
+
+{% if latest_notice_list %}
+    <ul>
+    {% for notice in latest_notice_list %}
+        <li><a href="{% url 'exchange:detail' notice.id %}">{{ notice.title }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+
+<a href="{% url 'exchange:new' %}">Новое объявление</a>
+
+{% endblock content %}

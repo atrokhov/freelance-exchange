@@ -1,0 +1,20 @@
+{% extends 'exchange/base.html' %}
+{% block content %}
+
+<h1>{{ notice.title }}</h1> Автор: {{ notice.author }}
+
+<p>{{ notice.body }}</p>
+
+<p><b>{{ notice.price }} Сом</b></p>
+
+<p>Выполнено? {{ notice.done }}</p>
+
+<p>Опубликовано: {{ notice.pub_date }}</p>
+
+<a href="{% url 'exchange:index' %}">Назад</a>
+
+
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+{% endblock content %}
