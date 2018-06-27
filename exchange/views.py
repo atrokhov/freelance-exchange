@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.shortcuts import get_object_or_404, render, redirect
+from django.shortcuts import get_object_or_404, render, redirect, render_to_response
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.views import generic
@@ -9,29 +9,42 @@ from django.views import generic
 from .models import Notice
 from .forms import NoticeForm
 
-class IndexView(generic.ListView):
-    template_name = 'exchange/index.html'
-    context_object_name = 'latest_notice_list'
+from django.contrib import auth
+from django.contrib.auth import login, authenticate
+from django.contrib.auth.forms import UserCreationForm
 
-    def get_queryset(self):
-        return Notice.objects.order_by('-pub_date')
 
-class DetailView(generic.DetailView):
-    model = Notice
-    template_name = 'exchange/detail.html'
+def index(request):
+    latest_notice_list = Notice.objects.order_by('-pub_date')
+    context = {'latest_notice_list': latest_notice_list}
+    return render(request, 'exchange/index.html', context)
 
-class CreateView(generic.CreateView):
-    form_class = NoticeForm
-    model = Notice
-    template_name = 'exchange/new.html'
+def detail(request, notice_id):
+    notice = get_object_or_404(Notice, pk=notice_id)
+    return render(request, 'exchange/detail.html', {'notice': notice})
 
-    def new(request):
-        if request.method == "POST":
-            form = NoticeForm(request.POST)
-            if form.is_valid():
-                notice = form.save(commit=False)
-                post.save()
-                return redirect('index')
-        else:
-            form = PostForm()
-        return render(request, 'exchange/new.html', {'form': form})
+def new(request):
+    if request.method == "POST":
+        form = NoticeForm(request.POST)
+        if form.is_valid():
+            notice = form.save(commit=False)
+            notice.author = request.user
+            notice.save()
+            return redirect('/exchange')
+    else:
+        form = NoticeForm()
+    return render(request, 'exchange/new.html', {'form': form})
+
+def register(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=raw_password)
+            login(request, user)
+            return redirect('index')
+    else:
+        form = UserCreationForm()
+    return render(request, 'registration/register.html', {'form': form})

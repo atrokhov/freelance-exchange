@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+LOGIN_REDIRECT_URL = '/exchange'
 
 # Application definition
 ACCOUNT_ACTIVATION_DAYS = 2

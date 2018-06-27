@@ -6,4 +6,4 @@ class NoticeForm(forms.ModelForm):
 
     class Meta:
         model = Notice
-        fields = ('author', 'title', 'body', 'price',)
+        fields = ('title', 'body', 'price',)
