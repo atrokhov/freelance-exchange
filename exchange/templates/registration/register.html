@@ -6,7 +6,16 @@
   <h1>Регистрация пользователя</h1>
   <form method="post">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Sign up</button>
+    {% for field in user_form %}
+      <p>
+        {{ field.label_tag }}<br>
+        {{ field }}
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+      </p>
+    {% endfor %}
+    {{ profile_form.as_p }}
+    <button type="submit">Зарегестрироваться</button>
   </form>
 {% endblock %}

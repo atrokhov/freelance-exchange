@@ -2,15 +2,21 @@
 {% block content %}
 
 {% if latest_notice_list %}
-    <ul>
+    <div class="row">
     {% for notice in latest_notice_list %}
-        <li><a href="{% url 'exchange:detail' notice.id %}">{{ notice.title }}</a></li>
+          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">{{ notice.title }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Автор: {{ notice.author }}</h6>
+                <p class="card-text">{{ notice.body }}</p>
+                <a href="{% url 'exchange:detail' notice.id %}" class="btn btn-primary">Читать далее</a>
+              </div>
+            </div>
+          </div>
     {% endfor %}
-    </ul>
 {% else %}
-    <p>No polls are available.</p>
+    <p>Нет объявлений</p>
 {% endif %}
-
-<a href="{% url 'exchange:new' %}">Новое объявление</a>
 
 {% endblock content %}
