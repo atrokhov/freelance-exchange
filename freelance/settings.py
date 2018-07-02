@@ -40,14 +40,17 @@ EMAIL_USE_TLS = False
 DEFAULT_FROM_EMAIL = 'freelance@exchange.com'
 
 INSTALLED_APPS = [
-    'exchange.apps.ExchangeConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'exchange',
+    'registration',
+    'djmoney',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -60,6 +63,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'freelance.urls'
+
 
 TEMPLATES = [
     {
@@ -108,7 +112,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/

@@ -1,14 +1,30 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+from djmoney.models.fields import MoneyField
 from django.db import models
 from django.contrib.auth.models import User
-
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
+class Transactions_types(models.Model):
+    type = models.CharField(max_length=10)
 
-# Create your models here.
+    class Meta:
+        verbose_name = 'Типы транзакций'
+
+    def __unicode__(self):
+        return self.type
+
+class Transactions(models.Model):
+    transaction_type = models.ForeignKey(Transactions_types)
+    transaction_sum = models.IntegerField()
+
+    class Meta:
+        verbose_name = 'Транзакции'
+
+
+
 class Notice(models.Model):
     author = models.ForeignKey(User, null=True, blank=True)
     title = models.CharField(max_length=200, default="")
@@ -24,14 +40,13 @@ class Notice(models.Model):
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    money = models.IntegerField(default=0)
+    current_balance = models.IntegerField(default=0)
+    transaction = models.ForeignKey(Transactions, on_delete=models.CASCADE)
 
 
-@receiver(post_save, sender=User)
-def create_user_profile(sender, instance, created, **kwargs):
+@receiver(post_save, sender=User, dispatch_uid='save_new_user_profile')
+def save_profile(sender, instance, created, **kwargs):
+    user = instance
     if created:
-        Profile.objects.create(user=instance)
-
-@receiver(post_save, sender=User)
-def save_user_profile(sender, instance, **kwargs):
-    instance.profile.save()
+        profile = Profile(user=user)
+        profile.save()

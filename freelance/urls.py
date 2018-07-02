@@ -16,12 +16,10 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from exchange import views
-from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     url(r'^exchange/', include('exchange.urls', namespace='exchange')),
     url(r'^admin/', admin.site.urls),
-    url(r'^accounts/login/$', auth_views.login, name='login'),
-    url(r'^accounts/logout/$', auth_views.logout, {'next_page': '/exchange'}, name='logout'),
-    url(r'^accounts/register/$', views.register, name='register'),
+    url(r'^accounts/', include('registration.backends.hmac.urls')),
+    url('', include('exchange.urls')),
 ]

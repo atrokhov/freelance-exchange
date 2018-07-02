@@ -31,13 +31,13 @@
               <strong>{{ user.username }}</strong><span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
-              <li><%= link_to 'Редактировать профиль', edit_user_registration_path %></li>
-              <li class="nav-item">Ваш счет: {{ user.profile.money }}</li>
-              <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Выйти</a></li>
+              <li class="nav-item">Ваш баланс: {{ user.profile.current_balance }} Сом</li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'exchange:add_money' %}">Пополнить счет</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'auth_logout' %}">Выйти</a></li>
             </ul>
           {% else %}
-            <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Войти</a></li>
-            <li class="nav-item"><a class="nav-link" href="{% url 'register' %}" class="p-r-none">Зарегестрироваться</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'auth_login' %}">Войти</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'registration_register' %}" class="p-r-none">Зарегестрироваться</a></li>
           {% endif %}
       </ul>
     </div>

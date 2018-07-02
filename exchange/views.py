@@ -3,15 +3,9 @@ from __future__ import unicode_literals
 
 from django.shortcuts import get_object_or_404, render, redirect, render_to_response
 from django.http import HttpResponseRedirect
-from django.core.urlresolvers import reverse
-from django.views import generic
 
-from .models import Notice
-from .forms import NoticeForm, SignUpForm, ProfileForm
-
-from django.contrib import auth
-from django.contrib.auth import login, authenticate
-from django.contrib.auth.forms import UserCreationForm
+from .models import Notice, Profile
+from .forms import NoticeForm, ProfileForm
 
 
 def index(request):
@@ -54,21 +48,15 @@ def edit(request, notice_id):
         form = NoticeForm(instance=notice)
     return render(request, 'exchange/new.html', {'form': form})
 
-def register(request):
-    if request.method == 'POST':
-        user_form = SignUpForm(request.POST, instance=request.user)
-        profile_form = ProfileForm(request.POST, instance=request.profile)
-        if user_form.is_valid() and profile_form.is_valid():
-            user_form.save()
-            profile = profile_form.save(commit=False)
+def add_money(request):
+    if request.method == "POST":
+        form = ProfileForm(request.POST)
+        if form.is_valid():
+            profile = form.save(commit=False)
+            profile.current_balance += profile.transaction
             profile.user = request.user
             profile.save()
-            username = user_form.cleaned_data.get('username')
-            raw_password = user_form.cleaned_data.get('password1')
-            user = authenticate(username=username, password=raw_password)
-            login(request, user)
             return redirect('/exchange')
     else:
-        user_form = SignUpForm()
-        profile_form = ProfileForm()
-    return render(request, 'registration/register.html', {'user_form': user_form, 'profile_form': profile_form})
+        form = ProfileForm()
+    return render(request, 'exchange/add_money.html', {'form': form})
