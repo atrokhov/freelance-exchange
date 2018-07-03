@@ -7,23 +7,6 @@ from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
-class Transactions_types(models.Model):
-    type = models.CharField(max_length=10)
-
-    class Meta:
-        verbose_name = 'Типы транзакций'
-
-    def __unicode__(self):
-        return self.type
-
-class Transactions(models.Model):
-    transaction_type = models.ForeignKey(Transactions_types)
-    transaction_sum = models.IntegerField()
-
-    class Meta:
-        verbose_name = 'Транзакции'
-
-
 
 class Notice(models.Model):
     author = models.ForeignKey(User, null=True, blank=True)
@@ -34,6 +17,9 @@ class Notice(models.Model):
     price = models.IntegerField()
     executor = models.ForeignKey(User, null=True, blank=True, related_name='author')
 
+    class Meta:
+        verbose_name = 'Объявления'
+
     def __str__(self):
         return self.title
         return self.body
@@ -41,8 +27,35 @@ class Notice(models.Model):
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     current_balance = models.IntegerField(default=0)
-    transaction = models.ForeignKey(Transactions, on_delete=models.CASCADE)
+    transaction_sum = models.IntegerField(null=True, blank=True)
 
+@classmethod
+def deposit(cls, id, transaction_sum):
+    with transaction.atomic():
+        profile = (
+        cls.objects
+        .select_for_update()
+        .get(id=id)
+        )
+
+        profile.current_balance += transaction_sum
+        profile.save()
+    return profile
+
+@classmethod
+def withdraw(cls, id, transaction_sum):
+    with transaction.atomic():
+        profile = (
+        cls.objects
+        .select_for_update()
+        .get(id=id)
+        )
+
+        if profile.balance < transaction_sum:
+            raise errors.InsufficentFunds()
+        profile.current_balance -= transaction_sum
+        profile.save()
+    return profile
 
 @receiver(post_save, sender=User, dispatch_uid='save_new_user_profile')
 def save_profile(sender, instance, created, **kwargs):

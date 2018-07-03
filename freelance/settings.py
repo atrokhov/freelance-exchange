@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-LOGIN_REDIRECT_URL = '/exchange'
+LOGIN_REDIRECT_URL = '/'
 
 # Application definition
 ACCOUNT_ACTIVATION_DAYS = 2
@@ -48,7 +48,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'exchange',
     'registration',
-    'djmoney',
 ]
 
 

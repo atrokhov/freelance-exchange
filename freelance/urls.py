@@ -18,8 +18,7 @@ from django.contrib import admin
 from exchange import views
 
 urlpatterns = [
-    url(r'^exchange/', include('exchange.urls', namespace='exchange')),
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include('registration.backends.hmac.urls')),
-    url('', include('exchange.urls')),
+    url('', include('exchange.urls', namespace='exchange')),
 ]
