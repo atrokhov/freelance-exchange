@@ -16,9 +16,19 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from exchange import views
+from rest_framework import routers
+
+router = routers.DefaultRouter()
+
+router.register(r'users', views.UserViewSet)
+router.register(r'groups', views.GroupViewSet)
+router.register(r'notices', views.NoticeViewSet)
+router.register(r'profiles', views.ProfileViewSet)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include('registration.backends.hmac.urls')),
     url('', include('exchange.urls', namespace='exchange')),
+    url(r'^api/', include(router.urls)),
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]

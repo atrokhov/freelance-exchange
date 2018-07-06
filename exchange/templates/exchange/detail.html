@@ -1,7 +1,9 @@
 {% extends 'exchange/base.html' %}
 {% block content %}
 
-<h1>{{ notice.title }}</h1> Автор: {{ notice.author }}
+<h1>{{ notice.title }}</h1> 
+
+<p>Автор: {{ notice.author }}</p>
 
 <p>{{ notice.body }}</p>
 
@@ -10,6 +12,26 @@
 <p>Выполнено? {{ notice.done }}</p>
 
 <p>Опубликовано: {{ notice.pub_date }}</p>
+
+{% if user != notice.author and user != notice.executor %}
+    <form action="/set_executor/{{ notice.id }}/" method="POST" class="set-executor-form">
+        {% csrf_token %}
+        <input type="submit" value="Взять задание" class="btn btn-primary"/>
+    </form>
+{% endif %}
+
+{% if notice.done == False %}   
+    {% if notice.executor != None and user == notice.author%}
+        <form action="/done/{{ notice.id }}/" method="POST" class="done-form">
+            {% csrf_token %}
+            <input type="submit" value="Выполнено" class="btn btn-primary"/>
+        </form>
+    {% endif %}
+{% endif %}
+
+{% if user == notice.executor %}
+    <p><i>Вы уже взяли это задание</i></p>
+{% endif %}
 
 <a href="{% url 'exchange:index' %}">Назад</a>
 

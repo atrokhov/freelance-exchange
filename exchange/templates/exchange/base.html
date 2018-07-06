@@ -22,6 +22,9 @@
         <li class="nav-item">
           <a class="nav-link" href="{% url 'exchange:your_notices' %}">Ваши объявления</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'exchange:your_tasks' %}">Ваши задачи</a>
+        </li>
         {% endif %}
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -32,7 +35,7 @@
             </a>
             <ul class="dropdown-menu">
               <li class="nav-item">Ваш баланс: {{ user.profile.current_balance }} Сом</li>
-              <li class="nav-item"><a class="nav-link" href="{% url 'exchange:add_money' %}">Пополнить счет</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'exchange:add_money' user.profile.id %}">Пополнить счет</a></li>
               <li class="nav-item"><a class="nav-link" href="{% url 'auth_logout' %}">Выйти</a></li>
             </ul>
           {% else %}

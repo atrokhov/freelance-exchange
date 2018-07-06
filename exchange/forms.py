@@ -3,6 +3,17 @@ from django import forms
 
 from .models import Notice, Profile
 
+class DoneForm(forms.ModelForm):
+    
+    class Meta:
+        model = Notice
+        fields = ('done',)
+
+class SetExecutorForm(forms.ModelForm):
+
+    class Meta:
+        model = Notice
+        fields = ('executor',)
 
 class NoticeForm(forms.ModelForm):
 
