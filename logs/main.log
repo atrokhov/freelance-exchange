@@ -138,3 +138,1087 @@ Traceback (most recent call last):
   File "/Library/Python/2.7/site-packages/django/utils/functional.py", line 239, in inner
     return func(self._wrapped, *args)
 TypeError: 'AnonymousUser' object is not iterable
+ERROR:django.request: Internal Server Error: /your_notices/ (2018-07-09 10:07:45; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/list.py", line 159, in get
+    self.object_list = self.get_queryset()
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Users/arthuratrokhov/Desktop/python/freelance/exchange/views.py", line 84, in get_queryset
+    return Notice.objects.filter(author=self.request.user)
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 781, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 799, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1260, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1286, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1189, in build_filter
+    self.check_related_objects(field, value, opts)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1088, in check_related_objects
+    for v in value:
+  File "/Library/Python/2.7/site-packages/django/utils/functional.py", line 239, in inner
+    return func(self._wrapped, *args)
+TypeError: 'AnonymousUser' object is not iterable
+ERROR:django.request: Internal Server Error: /your_notices/ (2018-07-09 10:12:35; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/list.py", line 159, in get
+    self.object_list = self.get_queryset()
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Users/arthuratrokhov/Desktop/python/freelance/exchange/views.py", line 84, in get_queryset
+    return Notice.objects.filter(author=self.request.user)
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 781, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 799, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1260, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1286, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1189, in build_filter
+    self.check_related_objects(field, value, opts)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1088, in check_related_objects
+    for v in value:
+  File "/Library/Python/2.7/site-packages/django/utils/functional.py", line 239, in inner
+    return func(self._wrapped, *args)
+TypeError: 'AnonymousUser' object is not iterable
+ERROR:django.request: Internal Server Error: /your_notices/ (2018-07-09 10:14:30; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/list.py", line 159, in get
+    self.object_list = self.get_queryset()
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Users/arthuratrokhov/Desktop/python/freelance/exchange/views.py", line 84, in get_queryset
+    return Notice.objects.filter(author=self.request.user)
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 781, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 799, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1260, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1286, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1189, in build_filter
+    self.check_related_objects(field, value, opts)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1088, in check_related_objects
+    for v in value:
+  File "/Library/Python/2.7/site-packages/django/utils/functional.py", line 239, in inner
+    return func(self._wrapped, *args)
+TypeError: 'AnonymousUser' object is not iterable
+ERROR:django.request: Internal Server Error: /your_notices/ (2018-07-09 10:14:44; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/list.py", line 159, in get
+    self.object_list = self.get_queryset()
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Users/arthuratrokhov/Desktop/python/freelance/exchange/views.py", line 84, in get_queryset
+    return Notice.objects.filter(author=self.request.user)
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 781, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 799, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1260, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1286, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1189, in build_filter
+    self.check_related_objects(field, value, opts)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1088, in check_related_objects
+    for v in value:
+  File "/Library/Python/2.7/site-packages/django/utils/functional.py", line 239, in inner
+    return func(self._wrapped, *args)
+TypeError: 'AnonymousUser' object is not iterable
+ERROR:django.request: Internal Server Error: /your_notices/ (2018-07-09 10:15:37; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/list.py", line 159, in get
+    self.object_list = self.get_queryset()
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Users/arthuratrokhov/Desktop/python/freelance/exchange/views.py", line 84, in get_queryset
+    return Notice.objects.filter(author=self.request.user)
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 781, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 799, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1260, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1286, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1189, in build_filter
+    self.check_related_objects(field, value, opts)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1088, in check_related_objects
+    for v in value:
+  File "/Library/Python/2.7/site-packages/django/utils/functional.py", line 239, in inner
+    return func(self._wrapped, *args)
+TypeError: 'AnonymousUser' object is not iterable
+ERROR:django.request: Internal Server Error: /your_notices/ (2018-07-09 10:17:42; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/list.py", line 159, in get
+    self.object_list = self.get_queryset()
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Users/arthuratrokhov/Desktop/python/freelance/exchange/views.py", line 84, in get_queryset
+    return Notice.objects.filter(author=self.request.user)
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 781, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 799, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1260, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1286, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1189, in build_filter
+    self.check_related_objects(field, value, opts)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1088, in check_related_objects
+    for v in value:
+  File "/Library/Python/2.7/site-packages/django/utils/functional.py", line 239, in inner
+    return func(self._wrapped, *args)
+TypeError: 'AnonymousUser' object is not iterable
+ERROR:django.request: Internal Server Error: /your_notices/ (2018-07-09 10:18:12; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/list.py", line 159, in get
+    self.object_list = self.get_queryset()
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Users/arthuratrokhov/Desktop/python/freelance/exchange/views.py", line 84, in get_queryset
+    return Notice.objects.filter(author=self.request.user)
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 781, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 799, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1260, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1286, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1189, in build_filter
+    self.check_related_objects(field, value, opts)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1088, in check_related_objects
+    for v in value:
+  File "/Library/Python/2.7/site-packages/django/utils/functional.py", line 239, in inner
+    return func(self._wrapped, *args)
+TypeError: 'AnonymousUser' object is not iterable
+ERROR:django.request: Internal Server Error: /your_notices/ (2018-07-09 10:25:28; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/list.py", line 159, in get
+    self.object_list = self.get_queryset()
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Users/arthuratrokhov/Desktop/python/freelance/exchange/views.py", line 84, in get_queryset
+    return Notice.objects.filter(author=self.request.user)
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 781, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 799, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1260, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1286, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1189, in build_filter
+    self.check_related_objects(field, value, opts)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1088, in check_related_objects
+    for v in value:
+  File "/Library/Python/2.7/site-packages/django/utils/functional.py", line 239, in inner
+    return func(self._wrapped, *args)
+TypeError: 'AnonymousUser' object is not iterable
+ERROR:django.request: Internal Server Error: /your_notices/ (2018-07-09 10:43:25; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/list.py", line 159, in get
+    self.object_list = self.get_queryset()
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Users/arthuratrokhov/Desktop/python/freelance/exchange/views.py", line 84, in get_queryset
+    return Notice.objects.filter(author=self.request.user)
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 781, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 799, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1260, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1286, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1189, in build_filter
+    self.check_related_objects(field, value, opts)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1088, in check_related_objects
+    for v in value:
+  File "/Library/Python/2.7/site-packages/django/utils/functional.py", line 239, in inner
+    return func(self._wrapped, *args)
+TypeError: 'AnonymousUser' object is not iterable
+ERROR:django.request: Internal Server Error: /your_notices/ (2018-07-09 10:44:09; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/list.py", line 159, in get
+    self.object_list = self.get_queryset()
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Users/arthuratrokhov/Desktop/python/freelance/exchange/views.py", line 84, in get_queryset
+    return Notice.objects.filter(author=self.request.user)
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 781, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 799, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1260, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1286, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1189, in build_filter
+    self.check_related_objects(field, value, opts)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1088, in check_related_objects
+    for v in value:
+  File "/Library/Python/2.7/site-packages/django/utils/functional.py", line 239, in inner
+    return func(self._wrapped, *args)
+TypeError: 'AnonymousUser' object is not iterable
+ERROR:django.request: Internal Server Error: /your_notices/ (2018-07-09 11:04:32; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/list.py", line 159, in get
+    self.object_list = self.get_queryset()
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Users/arthuratrokhov/Desktop/python/freelance/exchange/views.py", line 84, in get_queryset
+    return Notice.objects.filter(author=self.request.user)
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 781, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 799, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1260, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1286, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1189, in build_filter
+    self.check_related_objects(field, value, opts)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1088, in check_related_objects
+    for v in value:
+  File "/Library/Python/2.7/site-packages/django/utils/functional.py", line 239, in inner
+    return func(self._wrapped, *args)
+TypeError: 'AnonymousUser' object is not iterable
+ERROR:django.request: Internal Server Error: /your_notices/ (2018-07-09 11:06:59; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/list.py", line 159, in get
+    self.object_list = self.get_queryset()
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Users/arthuratrokhov/Desktop/python/freelance/exchange/views.py", line 84, in get_queryset
+    return Notice.objects.filter(author=self.request.user)
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 781, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 799, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1260, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1286, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1189, in build_filter
+    self.check_related_objects(field, value, opts)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1088, in check_related_objects
+    for v in value:
+  File "/Library/Python/2.7/site-packages/django/utils/functional.py", line 239, in inner
+    return func(self._wrapped, *args)
+TypeError: 'AnonymousUser' object is not iterable
+ERROR:django.request: Internal Server Error: /your_notices/ (2018-07-09 11:07:41; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/list.py", line 159, in get
+    self.object_list = self.get_queryset()
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Users/arthuratrokhov/Desktop/python/freelance/exchange/views.py", line 84, in get_queryset
+    return Notice.objects.filter(author=self.request.user)
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 781, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 799, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1260, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1286, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1189, in build_filter
+    self.check_related_objects(field, value, opts)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1088, in check_related_objects
+    for v in value:
+  File "/Library/Python/2.7/site-packages/django/utils/functional.py", line 239, in inner
+    return func(self._wrapped, *args)
+TypeError: 'AnonymousUser' object is not iterable
+ERROR:django.request: Internal Server Error: /your_notices/ (2018-07-09 11:14:36; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/list.py", line 159, in get
+    self.object_list = self.get_queryset()
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Users/arthuratrokhov/Desktop/python/freelance/exchange/views.py", line 84, in get_queryset
+    return Notice.objects.filter(author=self.request.user)
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 781, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 799, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1260, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1286, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1189, in build_filter
+    self.check_related_objects(field, value, opts)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1088, in check_related_objects
+    for v in value:
+  File "/Library/Python/2.7/site-packages/django/utils/functional.py", line 239, in inner
+    return func(self._wrapped, *args)
+TypeError: 'AnonymousUser' object is not iterable
+ERROR:django.request: Internal Server Error: /your_notices/ (2018-07-09 11:15:56; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/list.py", line 159, in get
+    self.object_list = self.get_queryset()
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Users/arthuratrokhov/Desktop/python/freelance/exchange/views.py", line 84, in get_queryset
+    return Notice.objects.filter(author=self.request.user)
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 781, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 799, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1260, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1286, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1189, in build_filter
+    self.check_related_objects(field, value, opts)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1088, in check_related_objects
+    for v in value:
+  File "/Library/Python/2.7/site-packages/django/utils/functional.py", line 239, in inner
+    return func(self._wrapped, *args)
+TypeError: 'AnonymousUser' object is not iterable
+ERROR:django.request: Internal Server Error: /your_notices/ (2018-07-09 11:26:48; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/list.py", line 159, in get
+    self.object_list = self.get_queryset()
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Users/arthuratrokhov/Desktop/python/freelance/exchange/views.py", line 84, in get_queryset
+    return Notice.objects.filter(author=self.request.user)
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 781, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 799, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1260, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1286, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1189, in build_filter
+    self.check_related_objects(field, value, opts)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1088, in check_related_objects
+    for v in value:
+  File "/Library/Python/2.7/site-packages/django/utils/functional.py", line 239, in inner
+    return func(self._wrapped, *args)
+TypeError: 'AnonymousUser' object is not iterable
+ERROR:django.request: Internal Server Error: /your_notices/ (2018-07-09 11:28:51; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/list.py", line 159, in get
+    self.object_list = self.get_queryset()
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Users/arthuratrokhov/Desktop/python/freelance/exchange/views.py", line 84, in get_queryset
+    return Notice.objects.filter(author=self.request.user)
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 781, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 799, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1260, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1286, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1189, in build_filter
+    self.check_related_objects(field, value, opts)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1088, in check_related_objects
+    for v in value:
+  File "/Library/Python/2.7/site-packages/django/utils/functional.py", line 239, in inner
+    return func(self._wrapped, *args)
+TypeError: 'AnonymousUser' object is not iterable
+ERROR:django.request: Internal Server Error: /your_notices/ (2018-07-09 11:29:12; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/list.py", line 159, in get
+    self.object_list = self.get_queryset()
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Users/arthuratrokhov/Desktop/python/freelance/exchange/views.py", line 84, in get_queryset
+    return Notice.objects.filter(author=self.request.user)
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 781, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 799, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1260, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1286, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1189, in build_filter
+    self.check_related_objects(field, value, opts)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1088, in check_related_objects
+    for v in value:
+  File "/Library/Python/2.7/site-packages/django/utils/functional.py", line 239, in inner
+    return func(self._wrapped, *args)
+TypeError: 'AnonymousUser' object is not iterable
+ERROR:django.request: Internal Server Error: /your_notices/ (2018-07-09 11:33:56; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/list.py", line 159, in get
+    self.object_list = self.get_queryset()
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Users/arthuratrokhov/Desktop/python/freelance/exchange/views.py", line 84, in get_queryset
+    return Notice.objects.filter(author=self.request.user)
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 781, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 799, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1260, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1286, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1189, in build_filter
+    self.check_related_objects(field, value, opts)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1088, in check_related_objects
+    for v in value:
+  File "/Library/Python/2.7/site-packages/django/utils/functional.py", line 239, in inner
+    return func(self._wrapped, *args)
+TypeError: 'AnonymousUser' object is not iterable
+ERROR:django.request: Internal Server Error: /your_notices/ (2018-07-09 11:56:28; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/list.py", line 159, in get
+    self.object_list = self.get_queryset()
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Users/arthuratrokhov/Desktop/python/freelance/exchange/views.py", line 84, in get_queryset
+    return Notice.objects.filter(author=self.request.user)
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 781, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 799, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1260, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1286, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1189, in build_filter
+    self.check_related_objects(field, value, opts)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1088, in check_related_objects
+    for v in value:
+  File "/Library/Python/2.7/site-packages/django/utils/functional.py", line 239, in inner
+    return func(self._wrapped, *args)
+TypeError: 'AnonymousUser' object is not iterable
+ERROR:django.request: Internal Server Error: /your_notices/ (2018-07-09 12:04:12; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/list.py", line 159, in get
+    self.object_list = self.get_queryset()
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Users/arthuratrokhov/Desktop/python/freelance/exchange/views.py", line 84, in get_queryset
+    return Notice.objects.filter(author=self.request.user)
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 781, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 799, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1260, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1286, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1189, in build_filter
+    self.check_related_objects(field, value, opts)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1088, in check_related_objects
+    for v in value:
+  File "/Library/Python/2.7/site-packages/django/utils/functional.py", line 239, in inner
+    return func(self._wrapped, *args)
+TypeError: 'AnonymousUser' object is not iterable
+ERROR:django.request: Internal Server Error: /your_notices/ (2018-07-09 12:09:08; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/list.py", line 159, in get
+    self.object_list = self.get_queryset()
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Users/arthuratrokhov/Desktop/python/freelance/exchange/views.py", line 84, in get_queryset
+    return Notice.objects.filter(author=self.request.user)
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 781, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 799, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1260, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1286, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1189, in build_filter
+    self.check_related_objects(field, value, opts)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1088, in check_related_objects
+    for v in value:
+  File "/Library/Python/2.7/site-packages/django/utils/functional.py", line 239, in inner
+    return func(self._wrapped, *args)
+TypeError: 'AnonymousUser' object is not iterable
+ERROR:django.request: Internal Server Error: /your_notices/ (2018-07-09 12:10:41; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/list.py", line 159, in get
+    self.object_list = self.get_queryset()
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Users/arthuratrokhov/Desktop/python/freelance/exchange/views.py", line 84, in get_queryset
+    return Notice.objects.filter(author=self.request.user)
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 781, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 799, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1260, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1286, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1189, in build_filter
+    self.check_related_objects(field, value, opts)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1088, in check_related_objects
+    for v in value:
+  File "/Library/Python/2.7/site-packages/django/utils/functional.py", line 239, in inner
+    return func(self._wrapped, *args)
+TypeError: 'AnonymousUser' object is not iterable
+ERROR:django.request: Internal Server Error: /your_notices/ (2018-07-09 12:17:38; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/list.py", line 159, in get
+    self.object_list = self.get_queryset()
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Users/arthuratrokhov/Desktop/python/freelance/exchange/views.py", line 84, in get_queryset
+    return Notice.objects.filter(author=self.request.user)
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 781, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 799, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1260, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1286, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1189, in build_filter
+    self.check_related_objects(field, value, opts)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1088, in check_related_objects
+    for v in value:
+  File "/Library/Python/2.7/site-packages/django/utils/functional.py", line 239, in inner
+    return func(self._wrapped, *args)
+TypeError: 'AnonymousUser' object is not iterable
+ERROR:django.request: Internal Server Error: /notice/new/ (2018-07-09 14:08:13; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 217, in post
+    return super(BaseCreateView, self).post(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 183, in post
+    return self.form_valid(form)
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Users/arthuratrokhov/Desktop/python/freelance/exchange/views.py", line 57, in form_valid
+    form.instance.author = self.request.user
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/related_descriptors.py", line 216, in __set__
+    self.field.remote_field.model._meta.object_name,
+ValueError: Cannot assign "<SimpleLazyObject: <django.contrib.auth.models.AnonymousUser object at 0x1057792d0>>": "Notice.author" must be a "User" instance.
+ERROR:django.request: Internal Server Error: /set_executor/1/ (2018-07-09 14:58:02; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/Library/Python/2.7/site-packages/django/template/response.py", line 107, in render
+    self.content = self.rendered_content
+  File "/Library/Python/2.7/site-packages/django/template/response.py", line 82, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/Library/Python/2.7/site-packages/django/template/response.py", line 64, in resolve_template
+    return select_template(template, using=self.using)
+  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 53, in select_template
+    raise TemplateDoesNotExist(', '.join(template_name_list), chain=chain)
+TemplateDoesNotExist: exchange/notice_form.html
+ERROR:django.request: Internal Server Error: /set_executor/1/ (2018-07-09 15:02:27; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/Library/Python/2.7/site-packages/django/template/response.py", line 107, in render
+    self.content = self.rendered_content
+  File "/Library/Python/2.7/site-packages/django/template/response.py", line 82, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/Library/Python/2.7/site-packages/django/template/response.py", line 64, in resolve_template
+    return select_template(template, using=self.using)
+  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 53, in select_template
+    raise TemplateDoesNotExist(', '.join(template_name_list), chain=chain)
+TemplateDoesNotExist: exchange/notice_form.html
+ERROR:django.request: Internal Server Error: /set_executor/1/ (2018-07-09 15:06:14; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/Library/Python/2.7/site-packages/django/template/response.py", line 107, in render
+    self.content = self.rendered_content
+  File "/Library/Python/2.7/site-packages/django/template/response.py", line 82, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/Library/Python/2.7/site-packages/django/template/response.py", line 64, in resolve_template
+    return select_template(template, using=self.using)
+  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 53, in select_template
+    raise TemplateDoesNotExist(', '.join(template_name_list), chain=chain)
+TemplateDoesNotExist: exchange/notice_form.html
+ERROR:django.request: Internal Server Error: /set_executor/1/ (2018-07-09 15:20:48; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/Library/Python/2.7/site-packages/django/template/response.py", line 107, in render
+    self.content = self.rendered_content
+  File "/Library/Python/2.7/site-packages/django/template/response.py", line 82, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/Library/Python/2.7/site-packages/django/template/response.py", line 64, in resolve_template
+    return select_template(template, using=self.using)
+  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 53, in select_template
+    raise TemplateDoesNotExist(', '.join(template_name_list), chain=chain)
+TemplateDoesNotExist: exchange/notice_form.html
+ERROR:django.request: Internal Server Error: /set_executor/1/ (2018-07-09 16:01:26; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/Library/Python/2.7/site-packages/django/template/response.py", line 107, in render
+    self.content = self.rendered_content
+  File "/Library/Python/2.7/site-packages/django/template/response.py", line 82, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/Library/Python/2.7/site-packages/django/template/response.py", line 64, in resolve_template
+    return select_template(template, using=self.using)
+  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 53, in select_template
+    raise TemplateDoesNotExist(', '.join(template_name_list), chain=chain)
+TemplateDoesNotExist: exchange/notice_form.html
+ERROR:django.request: Internal Server Error: /set_executor/1/ (2018-07-09 16:10:00; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/Library/Python/2.7/site-packages/django/template/response.py", line 107, in render
+    self.content = self.rendered_content
+  File "/Library/Python/2.7/site-packages/django/template/response.py", line 82, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/Library/Python/2.7/site-packages/django/template/response.py", line 64, in resolve_template
+    return select_template(template, using=self.using)
+  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 53, in select_template
+    raise TemplateDoesNotExist(', '.join(template_name_list), chain=chain)
+TemplateDoesNotExist: exchange/notice_form.html
+ERROR:django.request: Internal Server Error: /set_executor/1/ (2018-07-09 16:15:21; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/Library/Python/2.7/site-packages/django/template/response.py", line 107, in render
+    self.content = self.rendered_content
+  File "/Library/Python/2.7/site-packages/django/template/response.py", line 82, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/Library/Python/2.7/site-packages/django/template/response.py", line 64, in resolve_template
+    return select_template(template, using=self.using)
+  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 53, in select_template
+    raise TemplateDoesNotExist(', '.join(template_name_list), chain=chain)
+TemplateDoesNotExist: exchange/notice_form.html
+ERROR:django.request: Internal Server Error: /set_executor/1/ (2018-07-09 16:42:36; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/Library/Python/2.7/site-packages/django/template/response.py", line 107, in render
+    self.content = self.rendered_content
+  File "/Library/Python/2.7/site-packages/django/template/response.py", line 82, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/Library/Python/2.7/site-packages/django/template/response.py", line 64, in resolve_template
+    return select_template(template, using=self.using)
+  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 53, in select_template
+    raise TemplateDoesNotExist(', '.join(template_name_list), chain=chain)
+TemplateDoesNotExist: exchange/notice_form.html
+ERROR:django.request: Internal Server Error: /set_executor/1/ (2018-07-09 16:48:17; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/Library/Python/2.7/site-packages/django/template/response.py", line 107, in render
+    self.content = self.rendered_content
+  File "/Library/Python/2.7/site-packages/django/template/response.py", line 82, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/Library/Python/2.7/site-packages/django/template/response.py", line 64, in resolve_template
+    return select_template(template, using=self.using)
+  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 53, in select_template
+    raise TemplateDoesNotExist(', '.join(template_name_list), chain=chain)
+TemplateDoesNotExist: exchange/notice_form.html
+ERROR:django.request: Internal Server Error: /set_executor/1/ (2018-07-09 16:49:28; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/Library/Python/2.7/site-packages/django/template/response.py", line 107, in render
+    self.content = self.rendered_content
+  File "/Library/Python/2.7/site-packages/django/template/response.py", line 82, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/Library/Python/2.7/site-packages/django/template/response.py", line 64, in resolve_template
+    return select_template(template, using=self.using)
+  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 53, in select_template
+    raise TemplateDoesNotExist(', '.join(template_name_list), chain=chain)
+TemplateDoesNotExist: exchange/notice_form.html
+ERROR:django.request: Internal Server Error: /set_executor/1/ (2018-07-09 17:05:53; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/Library/Python/2.7/site-packages/django/template/response.py", line 107, in render
+    self.content = self.rendered_content
+  File "/Library/Python/2.7/site-packages/django/template/response.py", line 82, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/Library/Python/2.7/site-packages/django/template/response.py", line 64, in resolve_template
+    return select_template(template, using=self.using)
+  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 53, in select_template
+    raise TemplateDoesNotExist(', '.join(template_name_list), chain=chain)
+TemplateDoesNotExist: exchange/notice_form.html
+ERROR:django.request: Internal Server Error: /set_executor/1/ (2018-07-09 17:07:43; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/Library/Python/2.7/site-packages/django/template/response.py", line 107, in render
+    self.content = self.rendered_content
+  File "/Library/Python/2.7/site-packages/django/template/response.py", line 82, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/Library/Python/2.7/site-packages/django/template/response.py", line 64, in resolve_template
+    return select_template(template, using=self.using)
+  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 53, in select_template
+    raise TemplateDoesNotExist(', '.join(template_name_list), chain=chain)
+TemplateDoesNotExist: exchange/notice_form.html
+ERROR:django.request: Internal Server Error: /set_executor/1/ (2018-07-13 10:20:49; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/Library/Python/2.7/site-packages/django/template/response.py", line 107, in render
+    self.content = self.rendered_content
+  File "/Library/Python/2.7/site-packages/django/template/response.py", line 82, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/Library/Python/2.7/site-packages/django/template/response.py", line 64, in resolve_template
+    return select_template(template, using=self.using)
+  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 53, in select_template
+    raise TemplateDoesNotExist(', '.join(template_name_list), chain=chain)
+TemplateDoesNotExist: exchange/notice_form.html

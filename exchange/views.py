@@ -26,12 +26,12 @@ class GroupViewSet(viewsets.ModelViewSet):
     serializer_class = GroupSerializer
 
 class ProfileViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all().all()
-    serializer_class = UserSerializer
+    queryset = Profile.objects.all()
+    serializer_class = ProfileSerializer
 
 class NoticeViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all().order_by('pub_date')
-    serializer_class = UserSerializer
+    queryset = Notice.objects.all().order_by('pub_date')
+    serializer_class = NoticeSerializer
 
 class IndexView(generic.ListView):
     template_name = 'exchange/index.html'
@@ -110,6 +110,7 @@ class UserTasksView(generic.ListView):
 class SetExecutorView(generic.UpdateView):
     model = Notice
     form_class = SetExecutorForm
+    template_name = "exchange/detail.html"
     
     @transaction.atomic
     def form_valid(self, form):

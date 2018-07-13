@@ -13,19 +13,21 @@
 
 <p>Опубликовано: {{ notice.pub_date }}</p>
 
-{% if user != notice.author and user != notice.executor %}
+{% if user != notice.author and user != notice.executor and notice.done == False %}
     <form action="/set_executor/{{ notice.id }}/" method="POST" class="set-executor-form">
         {% csrf_token %}
         <input type="submit" value="Взять задание" class="btn btn-primary"/>
     </form>
 {% endif %}
 
-{% if notice.done == False %}   
-    {% if notice.executor != None and user == notice.author%}
-        <form action="/done/{{ notice.id }}/" method="POST" class="done-form">
-            {% csrf_token %}
-            <input type="submit" value="Выполнено" class="btn btn-primary"/>
-        </form>
+{% if user.is_authenticated %}
+    {% if notice.done == False %}   
+        {% if notice.executor != None and user == notice.author%}
+            <form action="/done/{{ notice.id }}/" method="POST" class="done-form">
+                {% csrf_token %}
+                <input type="submit" value="Выполнено" class="btn btn-primary"/>
+            </form>
+        {% endif %}
     {% endif %}
 {% endif %}
 
