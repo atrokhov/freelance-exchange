@@ -131,6 +131,14 @@ class NoticeCreateTests(TestCase):
         user2 = self.create_user(username='testuser2', password='12345')
         self.client.login(username='testuser2', password='12345')
         self.client.post('/notice/new/', { 'author': user2, 'title': "Notice.", 'body': "Notice.", 'done': False, 'price': 100, 'executor': user1, 'days': 0 })
+        self.client.post('/notice/new/', { 'author': user2, 'title': "Notice.", 'body': "Notice.", 'done': False, 'price': 100, 'executor': user1, 'days': 0 })
+        self.client.post('/notice/new/', { 'author': user2, 'title': "Notice.", 'body': "Notice.", 'done': False, 'price': 100, 'executor': user1, 'days': 0 })
+        self.client.post('/notice/new/', { 'author': user2, 'title': "Notice.", 'body': "Notice.", 'done': False, 'price': 100, 'executor': user1, 'days': 0 })
+        self.client.post('/notice/new/', { 'author': user2, 'title': "Notice.", 'body': "Notice.", 'done': False, 'price': 100, 'executor': user1, 'days': 0 })
+        self.client.post('/notice/new/', { 'author': user2, 'title': "Notice.", 'body': "Notice.", 'done': False, 'price': 100, 'executor': user1, 'days': 0 })
+        self.client.post('/notice/new/', { 'author': user2, 'title': "Notice.", 'body': "Notice.", 'done': False, 'price': 100, 'executor': user1, 'days': 0 })
+        self.client.post('/notice/new/', { 'author': user2, 'title': "Notice.", 'body': "Notice.", 'done': False, 'price': 100, 'executor': user1, 'days': 0 })
+        self.client.post('/notice/new/', { 'author': user2, 'title': "Notice.", 'body': "Notice.", 'done': False, 'price': 100, 'executor': user1, 'days': 0 })
         self.assertEqual(Notice.objects.last().title, "Notice.")
 
     def test_display_post(self):

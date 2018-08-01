@@ -7,6 +7,7 @@ from django.core.urlresolvers import reverse
 from django.views import generic
 
 from django.db import transaction
+from django.db.models import F
 
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
@@ -20,7 +21,6 @@ class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all().order_by('-date_joined')
     serializer_class = UserSerializer
 
-
 class GroupViewSet(viewsets.ModelViewSet):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
@@ -33,14 +33,16 @@ class NoticeViewSet(viewsets.ModelViewSet):
     queryset = Notice.objects.all().order_by('pub_date')
     serializer_class = NoticeSerializer
 
+
+
+
 class IndexView(generic.ListView):
     template_name = 'exchange/index.html'
     context_object_name = 'latest_notice_list'
 
     @transaction.atomic
     def get_queryset(self):
-        return Notice.objects.order_by('-pub_date')
-
+        return Notice.objects.select_related().order_by('-pub_date')
 
 class DetailView(generic.DetailView):
     model = Notice
@@ -54,7 +56,7 @@ class NewView(generic.CreateView):
 
     @transaction.atomic
     def form_valid(self, form):
-        form.instance.author = self.request.user
+        form.instance.author = User.objects.select_for_update().get(id=self.request.user.id)
         return super(NewView, self).form_valid(form)
     
     @transaction.atomic
@@ -68,7 +70,7 @@ class EditView(generic.UpdateView):
 
     @transaction.atomic
     def form_valid(self, form):
-        form.instance.author = self.request.user
+        form.instance.author = User.objects.select_related().get(id=self.request.user.id)
         return super(EditView, self).form_valid(form)
     
     @transaction.atomic
@@ -81,7 +83,7 @@ class UserNoticesView(generic.ListView):
 
     @transaction.atomic
     def get_queryset(self):
-        return Notice.objects.filter(author=self.request.user)
+        return Notice.objects.select_related().filter(author=self.request.user)
 
 class AddMoneyView(generic.UpdateView):
     model = Profile
@@ -94,8 +96,8 @@ class AddMoneyView(generic.UpdateView):
 
     @transaction.atomic
     def form_valid(self, form):
-        form.instance.user = self.request.user
-        form.instance.current_balance += form.instance.transaction_sum
+        form.instance.user = User.objects.select_for_update().get(id=self.request.user.id)
+        form.instance.current_balance = F('current_balance') + form.instance.transaction_sum
         return super(AddMoneyView, self).form_valid(form)
 
 
@@ -105,7 +107,7 @@ class UserTasksView(generic.ListView):
 
     @transaction.atomic
     def get_queryset(self):
-        return Notice.objects.filter(executor=self.request.user)
+        return Notice.objects.select_related().filter(executor=self.request.user)
 
 class SetExecutorView(generic.UpdateView):
     model = Notice
@@ -114,7 +116,7 @@ class SetExecutorView(generic.UpdateView):
     
     @transaction.atomic
     def form_valid(self, form):
-        form.instance.executor = self.request.user
+        form.instance.executor = User.objects.select_for_update().get(id=self.request.user.id)
         return super(SetExecutorView, self).form_valid(form)
     
     @transaction.atomic
@@ -123,7 +125,7 @@ class SetExecutorView(generic.UpdateView):
 
 @transaction.atomic
 def done(request, pk):
-    notice = get_object_or_404(Notice, pk=pk)
+    notice = get_object_or_404(Notice.objects.select_for_update(), pk=pk)
     author = Profile.objects.get(user=notice.author)
     executor = Profile.objects.get(user=notice.executor)
     if request.method == "POST":
@@ -131,8 +133,8 @@ def done(request, pk):
         if form.is_valid():
             notice.done = True
             if author.current_balance >= notice.price:
-                author.current_balance -= notice.price
-                executor.current_balance += notice.price
+                author.current_balance = F('current_balance') - notice.price
+                executor.current_balance = F('current_balance') + notice.price
                 notice.save()
                 author.save()
                 executor.save()
