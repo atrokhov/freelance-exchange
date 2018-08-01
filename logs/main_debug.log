@@ -1462,3 +1462,6 @@ INFO:django.server: "GET /accounts/logout/ HTTP/1.1" 200 2024 (2018-08-01 11:21:
 INFO:django.server: "GET /accounts/login/ HTTP/1.1" 200 2872 (2018-08-01 11:21:48; basehttp.py:124)
 INFO:django.server: "POST /accounts/login/ HTTP/1.1" 302 0 (2018-08-01 11:22:14; basehttp.py:124)
 INFO:django.server: "GET / HTTP/1.1" 200 5878 (2018-08-01 11:22:14; basehttp.py:124)
+WARNING:django.server: "GET /robots.txt HTTP/1.1" 404 3947 (2018-08-01 13:48:11; basehttp.py:124)
+INFO:django.server: "GET / HTTP/1.1" 200 1964 (2018-08-01 13:48:11; basehttp.py:124)
+INFO:django.server: "GET / HTTP/1.1" 200 1964 (2018-08-01 13:48:13; basehttp.py:124)
