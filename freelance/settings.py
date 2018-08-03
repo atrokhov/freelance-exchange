@@ -93,7 +93,7 @@ DATABASES = {
         'NAME': 'freelance_db',
         'USER' : 'postgres',
         'PASSWORD' : 'proofYou3',
-        'HOST' : '127.0.0.1',
+        'HOST' : 'postgres',
         'PORT' : '5432',
     }
 }

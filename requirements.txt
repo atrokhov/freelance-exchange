@@ -1,0 +1,8 @@
+Django==1.11
+requests==2.19.1
+django-registration==2.4.1
+djangorestframework==3.8.2
+django_celery_beat
+django_celery_results
+psycopg2-binary
+django-money
