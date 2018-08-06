@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 import datetime
 
 from django.utils import timezone
-from django.test import TestCase
+from django.test import TestCase, TransactionTestCase
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 
@@ -19,7 +19,7 @@ def create_notice(author, title, body, done, price, executor, days):
         return Notice.objects.create(author=author, title=title, body=body, done=done, price=price, executor=executor, pub_date=time)
 
     
-class NoticeIndexTests(TestCase):
+class NoticeIndexTests(TransactionTestCase):
 
     def create_user(self, username, password):
         self.user = User.objects.create_user(username=username, password=password)
@@ -52,7 +52,7 @@ class NoticeIndexTests(TestCase):
         )
 
 
-class NoticeUserNoticesTests(TestCase):
+class NoticeUserNoticesTests(TransactionTestCase):
 
     def create_user(self, username, password):
         self.user = User.objects.create_user(username=username, password=password, is_active=True)
@@ -78,7 +78,7 @@ class NoticeUserNoticesTests(TestCase):
             ['<Notice: Notice.>']
         )
 
-class NoticeUserTasksTests(TestCase):
+class NoticeUserTasksTests(TransactionTestCase):
 
     def create_user(self, username, password):
         self.user = User.objects.create_user(username=username, password=password, is_active=True)
@@ -104,7 +104,7 @@ class NoticeUserTasksTests(TestCase):
             ['<Notice: Notice.>']
         )
 
-class NoticeDetailTests(TestCase):
+class NoticeDetailTests(TransactionTestCase):
 
     def create_user(self, username, password):
         self.user = User.objects.create_user(username=username, password=password, is_active=True)
@@ -119,7 +119,7 @@ class NoticeDetailTests(TestCase):
         response = self.client.get(reverse('exchange:detail', args=(notice.id,)))
         self.assertContains(response, notice.body, status_code=200)
 
-class NoticeCreateTests(TestCase):
+class NoticeCreateTests(TransactionTestCase):
 
     def create_user(self, username, password):
         self.user = User.objects.create_user(username=username, password=password, is_active=True)
@@ -149,7 +149,7 @@ class NoticeCreateTests(TestCase):
         response = self.client.get(reverse('exchange:detail', args=(notice.id,)))
         self.assertContains(response, "Notice.")
 
-class UpdateFormTest(TestCase):
+class UpdateFormTest(TransactionTestCase):
 
     def create_user(self, username, password):
         self.user = User.objects.create_user(username=username, password=password, is_active=True)
@@ -171,7 +171,7 @@ class UpdateFormTest(TestCase):
         notice.refresh_from_db()
         self.assertEqual(notice.body, 'Hello world!!!')
 
-class AddMoneyFormTest(TestCase):
+class AddMoneyFormTest(TransactionTestCase):
 
     def create_user(self, username, password):
         self.user = User.objects.create_user(username=username, password=password, is_active=True)
@@ -189,7 +189,7 @@ class AddMoneyFormTest(TestCase):
         user.profile.refresh_from_db()
         self.assertEqual(user.profile.current_balance, 40)
 
-class SetExecutorFormTest(TestCase):
+class SetExecutorFormTest(TransactionTestCase):
 
     def create_user(self, username, password):
         self.user = User.objects.create_user(username=username, password=password, is_active=True)
@@ -209,7 +209,7 @@ class SetExecutorFormTest(TestCase):
         notice.refresh_from_db()
         self.assertEqual(notice.executor, user2)
 
-class DoneFormTest(TestCase):
+class DoneFormTest(TransactionTestCase):
 
     def create_user(self, username, password):
         self.user = User.objects.create_user(username=username, password=password, is_active=True)

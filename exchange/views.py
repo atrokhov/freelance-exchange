@@ -18,19 +18,19 @@ from .models import Notice, Profile
 from .forms import NoticeForm, ProfileForm, SetExecutorForm, DoneForm
 
 class UserViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all().order_by('-date_joined')
+    queryset = User.objects.select_related().all().order_by('-date_joined')
     serializer_class = UserSerializer
 
 class GroupViewSet(viewsets.ModelViewSet):
-    queryset = Group.objects.all()
+    queryset = Group.objects.select_related().all()
     serializer_class = GroupSerializer
 
 class ProfileViewSet(viewsets.ModelViewSet):
-    queryset = Profile.objects.all()
+    queryset = Profile.objects.select_related().all()
     serializer_class = ProfileSerializer
 
 class NoticeViewSet(viewsets.ModelViewSet):
-    queryset = Notice.objects.all().order_by('pub_date')
+    queryset = Notice.objects.select_related().all().order_by('pub_date')
     serializer_class = NoticeSerializer
 
 
@@ -70,7 +70,7 @@ class EditView(generic.UpdateView):
 
     @transaction.atomic
     def form_valid(self, form):
-        form.instance.author = User.objects.select_related().get(id=self.request.user.id)
+        form.instance.author = User.objects.select_for_update().get(id=self.request.user.id)
         return super(EditView, self).form_valid(form)
     
     @transaction.atomic
@@ -83,7 +83,7 @@ class UserNoticesView(generic.ListView):
 
     @transaction.atomic
     def get_queryset(self):
-        return Notice.objects.select_related().filter(author=self.request.user)
+        return Notice.objects.prefetch_related().filter(author=self.request.user)
 
 class AddMoneyView(generic.UpdateView):
     model = Profile
@@ -107,7 +107,7 @@ class UserTasksView(generic.ListView):
 
     @transaction.atomic
     def get_queryset(self):
-        return Notice.objects.select_related().filter(executor=self.request.user)
+        return Notice.objects.prefetch_related().filter(executor=self.request.user)
 
 class SetExecutorView(generic.UpdateView):
     model = Notice
@@ -126,8 +126,8 @@ class SetExecutorView(generic.UpdateView):
 @transaction.atomic
 def done(request, pk):
     notice = get_object_or_404(Notice.objects.select_for_update(), pk=pk)
-    author = Profile.objects.get(user=notice.author)
-    executor = Profile.objects.get(user=notice.executor)
+    author = Profile.objects.select_for_update().get(user=notice.author)
+    executor = Profile.objects.select_for_update().get(user=notice.executor)
     if request.method == "POST":
         form = DoneForm(request.POST)
         if form.is_valid():
@@ -135,9 +135,9 @@ def done(request, pk):
             if author.current_balance >= notice.price:
                 author.current_balance = F('current_balance') - notice.price
                 executor.current_balance = F('current_balance') + notice.price
-                notice.save()
                 author.save()
                 executor.save()
+                notice.save()
                 return redirect('exchange:detail', pk=notice.pk)
             else:
                 return redirect('exchange:add_money', pk=author.pk)

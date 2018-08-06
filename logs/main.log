@@ -1222,3 +1222,258 @@ Traceback (most recent call last):
   File "/Library/Python/2.7/site-packages/django/template/loader.py", line 53, in select_template
     raise TemplateDoesNotExist(', '.join(template_name_list), chain=chain)
 TemplateDoesNotExist: exchange/notice_form.html
+ERROR:django.request: Internal Server Error: / (2018-08-06 11:21:22; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/list.py", line 159, in get
+    self.object_list = self.get_queryset()
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 184, in inner
+    with self:
+  File "/Library/Python/2.7/site-packages/django/db/transaction.py", line 158, in __enter__
+    if not connection.get_autocommit():
+  File "/Library/Python/2.7/site-packages/django/db/backends/base/base.py", line 385, in get_autocommit
+    self.ensure_connection()
+  File "/Library/Python/2.7/site-packages/django/db/backends/dummy/base.py", line 20, in complain
+    raise ImproperlyConfigured("settings.DATABASES is improperly configured. "
+ImproperlyConfigured: settings.DATABASES is improperly configured. Please supply the ENGINE value. Check settings documentation for more details.
+ERROR:django.request: Internal Server Error: /add_money/1/ (2018-08-06 11:22:16; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 240, in post
+    return super(BaseUpdateView, self).post(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 183, in post
+    return self.form_valid(form)
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Users/arthuratrokhov/Desktop/python/freelance/exchange/views.py", line 99, in form_valid
+    form.instance.user = User.objects.filter(id=self.request.user.id)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/related_descriptors.py", line 216, in __set__
+    self.field.remote_field.model._meta.object_name,
+ValueError: Cannot assign "<QuerySet [<User: testuser1>]>": "Profile.user" must be a "User" instance.
+ERROR:django.request: Internal Server Error: /add_money/2/ (2018-08-06 11:22:17; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 240, in post
+    return super(BaseUpdateView, self).post(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 183, in post
+    return self.form_valid(form)
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Users/arthuratrokhov/Desktop/python/freelance/exchange/views.py", line 99, in form_valid
+    form.instance.user = User.objects.filter(id=self.request.user.id)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/related_descriptors.py", line 216, in __set__
+    self.field.remote_field.model._meta.object_name,
+ValueError: Cannot assign "<QuerySet [<User: testuser1>]>": "Profile.user" must be a "User" instance.
+ERROR:django.request: Internal Server Error: /notice/new/ (2018-08-06 11:22:18; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 217, in post
+    return super(BaseCreateView, self).post(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 183, in post
+    return self.form_valid(form)
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Users/arthuratrokhov/Desktop/python/freelance/exchange/views.py", line 59, in form_valid
+    form.instance.author = User.objects.select_for_update().update(id=self.request.user.id)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 644, in update
+    rows = query.get_compiler(self.db).execute_sql(CURSOR)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/compiler.py", line 1191, in execute_sql
+    cursor = super(SQLUpdateCompiler, self).execute_sql(result_type)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/compiler.py", line 876, in execute_sql
+    cursor.execute(sql, params)
+  File "/Library/Python/2.7/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/Library/Python/2.7/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/Library/Python/2.7/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/Library/Python/2.7/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return Database.Cursor.execute(self, query, params)
+IntegrityError: UNIQUE constraint failed: auth_user.id
+ERROR:django.request: Internal Server Error: /edit/10/ (2018-08-06 11:22:24; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 240, in post
+    return super(BaseUpdateView, self).post(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 183, in post
+    return self.form_valid(form)
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Users/arthuratrokhov/Desktop/python/freelance/exchange/views.py", line 73, in form_valid
+    form.instance.author = User.objects.select_for_update().update(id=self.request.user.id)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 644, in update
+    rows = query.get_compiler(self.db).execute_sql(CURSOR)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/compiler.py", line 1191, in execute_sql
+    cursor = super(SQLUpdateCompiler, self).execute_sql(result_type)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/compiler.py", line 876, in execute_sql
+    cursor.execute(sql, params)
+  File "/Library/Python/2.7/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/Library/Python/2.7/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/Library/Python/2.7/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/Library/Python/2.7/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return Database.Cursor.execute(self, query, params)
+IntegrityError: UNIQUE constraint failed: auth_user.id
+ERROR:django.request: Internal Server Error: /add_money/1/ (2018-08-06 11:22:44; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 240, in post
+    return super(BaseUpdateView, self).post(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 183, in post
+    return self.form_valid(form)
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Users/arthuratrokhov/Desktop/python/freelance/exchange/views.py", line 99, in form_valid
+    form.instance.user = User.objects.filter(id=self.request.user.id)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/related_descriptors.py", line 216, in __set__
+    self.field.remote_field.model._meta.object_name,
+ValueError: Cannot assign "<QuerySet [<User: testuser1>]>": "Profile.user" must be a "User" instance.
+ERROR:django.request: Internal Server Error: /add_money/2/ (2018-08-06 11:22:45; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 240, in post
+    return super(BaseUpdateView, self).post(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 183, in post
+    return self.form_valid(form)
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Users/arthuratrokhov/Desktop/python/freelance/exchange/views.py", line 99, in form_valid
+    form.instance.user = User.objects.filter(id=self.request.user.id)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/related_descriptors.py", line 216, in __set__
+    self.field.remote_field.model._meta.object_name,
+ValueError: Cannot assign "<QuerySet [<User: testuser1>]>": "Profile.user" must be a "User" instance.
+ERROR:django.request: Internal Server Error: /notice/new/ (2018-08-06 11:22:46; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 217, in post
+    return super(BaseCreateView, self).post(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 183, in post
+    return self.form_valid(form)
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Users/arthuratrokhov/Desktop/python/freelance/exchange/views.py", line 59, in form_valid
+    form.instance.author = User.objects.select_for_update().update(id=self.request.user.id)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 644, in update
+    rows = query.get_compiler(self.db).execute_sql(CURSOR)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/compiler.py", line 1191, in execute_sql
+    cursor = super(SQLUpdateCompiler, self).execute_sql(result_type)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/compiler.py", line 876, in execute_sql
+    cursor.execute(sql, params)
+  File "/Library/Python/2.7/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/Library/Python/2.7/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/Library/Python/2.7/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+IntegrityError: duplicate key value violates unique constraint "auth_user_pkey"
+DETAIL:  Key (id)=(7) already exists.
+
+ERROR:django.request: Internal Server Error: /edit/10/ (2018-08-06 11:22:53; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 240, in post
+    return super(BaseUpdateView, self).post(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 183, in post
+    return self.form_valid(form)
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Users/arthuratrokhov/Desktop/python/freelance/exchange/views.py", line 73, in form_valid
+    form.instance.author = User.objects.select_for_update().update(id=self.request.user.id)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 644, in update
+    rows = query.get_compiler(self.db).execute_sql(CURSOR)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/compiler.py", line 1191, in execute_sql
+    cursor = super(SQLUpdateCompiler, self).execute_sql(result_type)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/compiler.py", line 876, in execute_sql
+    cursor.execute(sql, params)
+  File "/Library/Python/2.7/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/Library/Python/2.7/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/Library/Python/2.7/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+IntegrityError: duplicate key value violates unique constraint "auth_user_pkey"
+DETAIL:  Key (id)=(23) already exists.
+
