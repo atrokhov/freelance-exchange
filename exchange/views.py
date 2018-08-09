@@ -42,7 +42,7 @@ class IndexView(generic.ListView):
 
     @transaction.atomic
     def get_queryset(self):
-        return Notice.objects.select_related().order_by('-pub_date')
+        return Notice.objects.select_related().order_by('-pub_date').only('author', 'title', 'body')
 
 class DetailView(generic.DetailView):
     model = Notice
@@ -83,7 +83,7 @@ class UserNoticesView(generic.ListView):
 
     @transaction.atomic
     def get_queryset(self):
-        return Notice.objects.prefetch_related().filter(author=self.request.user)
+        return Notice.objects.prefetch_related().filter(author=self.request.user).only('title', 'executor', 'pub_date')
 
 class AddMoneyView(generic.UpdateView):
     model = Profile
@@ -107,7 +107,7 @@ class UserTasksView(generic.ListView):
 
     @transaction.atomic
     def get_queryset(self):
-        return Notice.objects.prefetch_related().filter(executor=self.request.user)
+        return Notice.objects.prefetch_related().filter(executor=self.request.user).only('author', 'title', 'pub_date')
 
 class SetExecutorView(generic.UpdateView):
     model = Notice
