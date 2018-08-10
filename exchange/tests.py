@@ -11,6 +11,7 @@ from django.core.urlresolvers import reverse
 from .models import Notice, Profile
 
 from django.test import Client
+from threading import Thread
 
 csrf_client = Client(enforce_csrf_checks=True)
 
@@ -138,8 +139,8 @@ class NoticeCreateTests(TransactionTestCase):
         self.client.post('/notice/new/', { 'author': user2, 'title': "Notice.", 'body': "Notice.", 'done': False, 'price': 100, 'executor': user1, 'days': 0 })
         self.client.post('/notice/new/', { 'author': user2, 'title': "Notice.", 'body': "Notice.", 'done': False, 'price': 100, 'executor': user1, 'days': 0 })
         self.client.post('/notice/new/', { 'author': user2, 'title': "Notice.", 'body': "Notice.", 'done': False, 'price': 100, 'executor': user1, 'days': 0 })
-        self.client.post('/notice/new/', { 'author': user2, 'title': "Notice.", 'body': "Notice.", 'done': False, 'price': 100, 'executor': user1, 'days': 0 })
-        self.assertEqual(Notice.objects.last().title, "Notice.")
+        self.client.post('/notice/new/', { 'author': user2, 'title': "Notice33.", 'body': "Notice.", 'done': False, 'price': 100, 'executor': user1, 'days': 0 })
+        self.assertEqual(Notice.objects.last().title, "Notice33.")
 
     def test_display_post(self):
         user1 = self.create_user(username="testuser1", password="12345")
@@ -171,6 +172,22 @@ class UpdateFormTest(TransactionTestCase):
         notice.refresh_from_db()
         self.assertEqual(notice.body, 'Hello world!!!')
 
+    def test_update_notice_with_one_user_on_two_gadjets(self):
+        user1 = self.create_user(username="testuser1", password="12345")
+        user2 = self.create_user(username='testuser2', password='12345')
+        self.client.login(username='testuser2', password='12345')
+        notice = create_notice(author=user2, title="Notice.", body="Notice.", done=False, price=100, executor=user1, days=0)
+
+        thread1 = Thread(target=self.client.post(reverse('exchange:edit', kwargs={'pk': notice.id}), {'title': 'The Catcher in the Rye', 'body': 'Hello world!!!'}))
+        thread2 = Thread(target=self.client.post(
+            reverse('exchange:edit', kwargs={'pk': notice.id}), 
+            {'title': 'Hi!!!', 'body': 'Bye world!!!'}))
+        thread1.start()
+        thread2.start()
+
+        notice.refresh_from_db()
+        self.assertEqual(notice.body, 'Bye world!!!')
+
 class AddMoneyFormTest(TransactionTestCase):
 
     def create_user(self, username, password):
@@ -200,8 +217,9 @@ class SetExecutorFormTest(TransactionTestCase):
         user1 = self.create_user(username="testuser1", password="12345")
         user2 = self.create_user(username='testuser2', password='12345')
         self.client.login(username='testuser2', password='12345')
+
         notice = create_notice(author=user1, title="Notice.", body="Notice.", done=False, price=100, executor=None, days=0)
-    
+
         response = self.client.post(reverse('exchange:set_executor', kwargs={'pk': notice.id}))
 
         self.assertEqual(response.status_code, 302)

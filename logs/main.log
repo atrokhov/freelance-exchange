@@ -1477,3 +1477,490 @@ Traceback (most recent call last):
 IntegrityError: duplicate key value violates unique constraint "auth_user_pkey"
 DETAIL:  Key (id)=(23) already exists.
 
+ERROR:django.request: Internal Server Error: /add_money/1/ (2018-08-09 16:47:39; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 240, in post
+    return super(BaseUpdateView, self).post(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 183, in post
+    return self.form_valid(form)
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Users/arthuratrokhov/Desktop/python/freelance/exchange/views.py", line 99, in form_valid
+    form.instance.user = User.objects.select_for_update().get(id=self.request.user.id)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 379, in get
+    self.model._meta.object_name
+DoesNotExist: User matching query does not exist.
+ERROR:django.request: Internal Server Error: /add_money/1/ (2018-08-09 16:48:22; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 240, in post
+    return super(BaseUpdateView, self).post(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 183, in post
+    return self.form_valid(form)
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Users/arthuratrokhov/Desktop/python/freelance/exchange/views.py", line 101, in form_valid
+    return super(AddMoneyView, self).form_valid(form)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 162, in form_valid
+    self.object = form.save()
+  File "/Library/Python/2.7/site-packages/django/forms/models.py", line 451, in save
+    self.instance.save()
+  File "/Library/Python/2.7/site-packages/django/db/models/base.py", line 806, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/Library/Python/2.7/site-packages/django/db/models/base.py", line 836, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/Library/Python/2.7/site-packages/django/db/models/base.py", line 903, in _save_table
+    forced_update)
+  File "/Library/Python/2.7/site-packages/django/db/models/base.py", line 953, in _do_update
+    return filtered._update(values) > 0
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 661, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/compiler.py", line 1191, in execute_sql
+    cursor = super(SQLUpdateCompiler, self).execute_sql(result_type)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/compiler.py", line 876, in execute_sql
+    cursor.execute(sql, params)
+  File "/Library/Python/2.7/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/Library/Python/2.7/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/Library/Python/2.7/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+IntegrityError: duplicate key value violates unique constraint "exchange_profile_user_id_key"
+DETAIL:  Key (user_id)=(2) already exists.
+
+ERROR:django.request: Internal Server Error: /add_money/1/ (2018-08-09 16:48:49; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 240, in post
+    return super(BaseUpdateView, self).post(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 183, in post
+    return self.form_valid(form)
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Users/arthuratrokhov/Desktop/python/freelance/exchange/views.py", line 101, in form_valid
+    return super(AddMoneyView, self).form_valid(form)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 162, in form_valid
+    self.object = form.save()
+  File "/Library/Python/2.7/site-packages/django/forms/models.py", line 451, in save
+    self.instance.save()
+  File "/Library/Python/2.7/site-packages/django/db/models/base.py", line 806, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/Library/Python/2.7/site-packages/django/db/models/base.py", line 836, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/Library/Python/2.7/site-packages/django/db/models/base.py", line 903, in _save_table
+    forced_update)
+  File "/Library/Python/2.7/site-packages/django/db/models/base.py", line 953, in _do_update
+    return filtered._update(values) > 0
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 661, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/compiler.py", line 1191, in execute_sql
+    cursor = super(SQLUpdateCompiler, self).execute_sql(result_type)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/compiler.py", line 876, in execute_sql
+    cursor.execute(sql, params)
+  File "/Library/Python/2.7/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/Library/Python/2.7/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/Library/Python/2.7/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+IntegrityError: duplicate key value violates unique constraint "exchange_profile_user_id_key"
+DETAIL:  Key (user_id)=(2) already exists.
+
+ERROR:django.request: Internal Server Error: /add_money/1/ (2018-08-09 16:49:15; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 240, in post
+    return super(BaseUpdateView, self).post(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 183, in post
+    return self.form_valid(form)
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Users/arthuratrokhov/Desktop/python/freelance/exchange/views.py", line 101, in form_valid
+    return super(AddMoneyView, self).form_valid(form)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 162, in form_valid
+    self.object = form.save()
+  File "/Library/Python/2.7/site-packages/django/forms/models.py", line 451, in save
+    self.instance.save()
+  File "/Library/Python/2.7/site-packages/django/db/models/base.py", line 806, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/Library/Python/2.7/site-packages/django/db/models/base.py", line 836, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/Library/Python/2.7/site-packages/django/db/models/base.py", line 903, in _save_table
+    forced_update)
+  File "/Library/Python/2.7/site-packages/django/db/models/base.py", line 953, in _do_update
+    return filtered._update(values) > 0
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 661, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/compiler.py", line 1191, in execute_sql
+    cursor = super(SQLUpdateCompiler, self).execute_sql(result_type)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/compiler.py", line 876, in execute_sql
+    cursor.execute(sql, params)
+  File "/Library/Python/2.7/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/Library/Python/2.7/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/Library/Python/2.7/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+IntegrityError: duplicate key value violates unique constraint "exchange_profile_user_id_key"
+DETAIL:  Key (user_id)=(2) already exists.
+
+ERROR:django.request: Internal Server Error: /add_money/1/ (2018-08-09 16:55:15; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 240, in post
+    return super(BaseUpdateView, self).post(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 183, in post
+    return self.form_valid(form)
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Users/arthuratrokhov/Desktop/python/freelance/exchange/views.py", line 101, in form_valid
+    return super(AddMoneyView, self).form_valid(form)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 162, in form_valid
+    self.object = form.save()
+  File "/Library/Python/2.7/site-packages/django/forms/models.py", line 451, in save
+    self.instance.save()
+  File "/Library/Python/2.7/site-packages/django/db/models/base.py", line 806, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/Library/Python/2.7/site-packages/django/db/models/base.py", line 836, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/Library/Python/2.7/site-packages/django/db/models/base.py", line 903, in _save_table
+    forced_update)
+  File "/Library/Python/2.7/site-packages/django/db/models/base.py", line 953, in _do_update
+    return filtered._update(values) > 0
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 661, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/compiler.py", line 1191, in execute_sql
+    cursor = super(SQLUpdateCompiler, self).execute_sql(result_type)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/compiler.py", line 876, in execute_sql
+    cursor.execute(sql, params)
+  File "/Library/Python/2.7/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/Library/Python/2.7/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/Library/Python/2.7/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+IntegrityError: duplicate key value violates unique constraint "exchange_profile_user_id_key"
+DETAIL:  Key (user_id)=(2) already exists.
+
+ERROR:django.request: Internal Server Error: /add_money/1/ (2018-08-09 17:40:07; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 240, in post
+    return super(BaseUpdateView, self).post(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 183, in post
+    return self.form_valid(form)
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Users/arthuratrokhov/Desktop/python/freelance/exchange/views.py", line 99, in form_valid
+    form.instance.user = User.objects.select_for_update().get(id=self.request.user.id)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 379, in get
+    self.model._meta.object_name
+DoesNotExist: User matching query does not exist.
+ERROR:django.request: Internal Server Error: /add_money/1/ (2018-08-09 17:42:49; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 240, in post
+    return super(BaseUpdateView, self).post(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 183, in post
+    return self.form_valid(form)
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Users/arthuratrokhov/Desktop/python/freelance/exchange/views.py", line 99, in form_valid
+    form.instance.user = User.objects.select_for_update().get(id=self.request.user.id)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 379, in get
+    self.model._meta.object_name
+DoesNotExist: User matching query does not exist.
+ERROR:django.request: Internal Server Error: /set_executor/18/ (2018-08-09 17:42:58; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 240, in post
+    return super(BaseUpdateView, self).post(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 183, in post
+    return self.form_valid(form)
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Users/arthuratrokhov/Desktop/python/freelance/exchange/views.py", line 119, in form_valid
+    form.instance.executor = User.objects.select_for_update().get(id=self.request.user.id)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 379, in get
+    self.model._meta.object_name
+DoesNotExist: User matching query does not exist.
+ERROR:django.request: Internal Server Error: /add_money/1/ (2018-08-09 17:43:48; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 240, in post
+    return super(BaseUpdateView, self).post(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 183, in post
+    return self.form_valid(form)
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Users/arthuratrokhov/Desktop/python/freelance/exchange/views.py", line 99, in form_valid
+    form.instance.user = User.objects.select_for_update().get(id=self.request.user.id)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 379, in get
+    self.model._meta.object_name
+DoesNotExist: User matching query does not exist.
+ERROR:django.request: Internal Server Error: /set_executor/18/ (2018-08-09 17:43:57; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 240, in post
+    return super(BaseUpdateView, self).post(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 183, in post
+    return self.form_valid(form)
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Users/arthuratrokhov/Desktop/python/freelance/exchange/views.py", line 119, in form_valid
+    form.instance.executor = User.objects.select_for_update().get(id=self.request.user.id)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 379, in get
+    self.model._meta.object_name
+DoesNotExist: User matching query does not exist.
+ERROR:django.request: Internal Server Error: /add_money/1/ (2018-08-09 17:44:55; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 240, in post
+    return super(BaseUpdateView, self).post(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 183, in post
+    return self.form_valid(form)
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Users/arthuratrokhov/Desktop/python/freelance/exchange/views.py", line 99, in form_valid
+    form.instance.user = User.objects.select_for_update().get(id=self.request.user.id)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 379, in get
+    self.model._meta.object_name
+DoesNotExist: User matching query does not exist.
+ERROR:django.request: Internal Server Error: /set_executor/18/ (2018-08-09 17:58:44; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 240, in post
+    return super(BaseUpdateView, self).post(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 183, in post
+    return self.form_valid(form)
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Users/arthuratrokhov/Desktop/python/freelance/exchange/views.py", line 119, in form_valid
+    form.instance.executor = User.objects.select_for_update().get(id=self.request.user.id)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 379, in get
+    self.model._meta.object_name
+DoesNotExist: User matching query does not exist.
+ERROR:django.request: Internal Server Error: /set_executor/18/ (2018-08-10 10:55:51; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 240, in post
+    return super(BaseUpdateView, self).post(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 183, in post
+    return self.form_valid(form)
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Users/arthuratrokhov/Desktop/python/freelance/exchange/views.py", line 119, in form_valid
+    form.instance.executor = User.objects.select_for_update().get(id=self.request.user.id)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 379, in get
+    self.model._meta.object_name
+DoesNotExist: User matching query does not exist.
+ERROR:django.request: Internal Server Error: /set_executor/18/ (2018-08-10 11:00:59; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 240, in post
+    return super(BaseUpdateView, self).post(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 183, in post
+    return self.form_valid(form)
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Users/arthuratrokhov/Desktop/python/freelance/exchange/views.py", line 119, in form_valid
+    form.instance.executor = User.objects.select_for_update().get(id=self.request.user.id)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 379, in get
+    self.model._meta.object_name
+DoesNotExist: User matching query does not exist.
+ERROR:django.request: Internal Server Error: /edit/20/ (2018-08-10 11:12:01; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 240, in post
+    return super(BaseUpdateView, self).post(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 183, in post
+    return self.form_valid(form)
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Users/arthuratrokhov/Desktop/python/freelance/exchange/views.py", line 73, in form_valid
+    form.instance.author = User.objects.select_for_update().get(id=self.request.user.id)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 379, in get
+    self.model._meta.object_name
+DoesNotExist: User matching query does not exist.
+ERROR:django.request: Internal Server Error: /edit/20/ (2018-08-10 11:24:56; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 240, in post
+    return super(BaseUpdateView, self).post(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 183, in post
+    return self.form_valid(form)
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Users/arthuratrokhov/Desktop/python/freelance/exchange/views.py", line 73, in form_valid
+    form.instance.author = User.objects.select_for_update().get(id=self.request.user.id)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 379, in get
+    self.model._meta.object_name
+DoesNotExist: User matching query does not exist.
+ERROR:django.request: Internal Server Error: /edit/20/ (2018-08-10 11:25:27; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 240, in post
+    return super(BaseUpdateView, self).post(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/edit.py", line 183, in post
+    return self.form_valid(form)
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Users/arthuratrokhov/Desktop/python/freelance/exchange/views.py", line 73, in form_valid
+    form.instance.author = User.objects.select_for_update().get(id=self.request.user.id)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 379, in get
+    self.model._meta.object_name
+DoesNotExist: User matching query does not exist.
