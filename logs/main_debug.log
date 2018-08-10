@@ -1465,3 +1465,85 @@ INFO:django.server: "GET / HTTP/1.1" 200 5878 (2018-08-01 11:22:14; basehttp.py:
 WARNING:django.server: "GET /robots.txt HTTP/1.1" 404 3947 (2018-08-01 13:48:11; basehttp.py:124)
 INFO:django.server: "GET / HTTP/1.1" 200 1964 (2018-08-01 13:48:11; basehttp.py:124)
 INFO:django.server: "GET / HTTP/1.1" 200 1964 (2018-08-01 13:48:13; basehttp.py:124)
+ERROR:django.request: Internal Server Error: / (2018-08-10 14:37:37; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/list.py", line 159, in get
+    self.object_list = self.get_queryset()
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 67, in _wrapper
+    return bound_func(*args, **kwargs)
+TypeError: _wrapped_view() takes at least 1 argument (0 given)
+ERROR:django.server: "GET / HTTP/1.1" 500 84448 (2018-08-10 14:37:37; basehttp.py:124)
+ERROR:django.request: Internal Server Error: / (2018-08-10 14:38:44; exception.py:135)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/list.py", line 159, in get
+    self.object_list = self.get_queryset()
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 185, in inner
+    return func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 67, in _wrapper
+    return bound_func(*args, **kwargs)
+TypeError: _wrapped_view() takes at least 1 argument (0 given)
+ERROR:django.server: "GET / HTTP/1.1" 500 84245 (2018-08-10 14:38:44; basehttp.py:124)
+INFO:django.server: "GET / HTTP/1.1" 200 1964 (2018-08-10 14:45:31; basehttp.py:124)
+INFO:django.server: "GET / HTTP/1.1" 200 1964 (2018-08-10 15:31:23; basehttp.py:124)
+INFO:django.server: "GET /accounts/login/ HTTP/1.1" 200 2872 (2018-08-10 15:31:25; basehttp.py:124)
+INFO:django.server: "GET /accounts/register/ HTTP/1.1" 200 3985 (2018-08-10 15:31:31; basehttp.py:124)
+WARNING:django.server: "GET /favicon.ico HTTP/1.1" 404 3950 (2018-08-10 15:31:32; basehttp.py:124)
+INFO:django.server: "POST /accounts/register/ HTTP/1.1" 302 0 (2018-08-10 15:32:03; basehttp.py:124)
+INFO:django.server: "GET /accounts/register/complete/ HTTP/1.1" 200 2242 (2018-08-10 15:32:03; basehttp.py:124)
+WARNING:django.server: "GET /favicon.ico HTTP/1.1" 404 3950 (2018-08-10 15:32:04; basehttp.py:124)
+INFO:django.server: "GET /accounts/activate/InJvb3RvdmljaCI:1fo3m7:M_qFcSy5oazmMaYXntV9roydFl4/ HTTP/1.1" 302 0 (2018-08-10 15:32:18; basehttp.py:124)
+INFO:django.server: "GET /accounts/activate/complete/ HTTP/1.1" 200 2107 (2018-08-10 15:32:18; basehttp.py:124)
+WARNING:django.server: "GET /favicon.ico HTTP/1.1" 404 3950 (2018-08-10 15:32:18; basehttp.py:124)
+INFO:django.server: "GET /accounts/login/ HTTP/1.1" 200 2872 (2018-08-10 15:32:20; basehttp.py:124)
+INFO:django.server: "POST /accounts/login/ HTTP/1.1" 302 0 (2018-08-10 15:32:42; basehttp.py:124)
+INFO:django.server: "GET / HTTP/1.1" 200 2721 (2018-08-10 15:32:42; basehttp.py:124)
+INFO:django.server: "GET /notice/new/ HTTP/1.1" 200 3227 (2018-08-10 15:32:45; basehttp.py:124)
+INFO:django.server: "POST /notice/new/ HTTP/1.1" 302 0 (2018-08-10 15:32:50; basehttp.py:124)
+INFO:django.server: "GET /1/ HTTP/1.1" 200 2923 (2018-08-10 15:32:50; basehttp.py:124)
+INFO:django.server: "GET / HTTP/1.1" 200 3163 (2018-08-10 15:32:52; basehttp.py:124)
+INFO:django.server: "GET /accounts/logout/ HTTP/1.1" 200 2024 (2018-08-10 15:32:54; basehttp.py:124)
+INFO:django.server: "GET /accounts/login/ HTTP/1.1" 200 2872 (2018-08-10 15:32:56; basehttp.py:124)
+INFO:django.server: "POST /accounts/login/ HTTP/1.1" 302 0 (2018-08-10 15:33:04; basehttp.py:124)
+INFO:django.server: "GET / HTTP/1.1" 200 3159 (2018-08-10 15:33:04; basehttp.py:124)
+INFO:django.server: "GET /1/ HTTP/1.1" 200 3230 (2018-08-10 15:33:06; basehttp.py:124)
+INFO:django.server: "POST /set_executor/1/ HTTP/1.1" 302 0 (2018-08-10 15:33:07; basehttp.py:124)
+INFO:django.server: "GET /2/ HTTP/1.1" 200 2975 (2018-08-10 15:33:07; basehttp.py:124)
+WARNING:django.server: "GET /favicon.ico HTTP/1.1" 404 3950 (2018-08-10 15:33:07; basehttp.py:124)
+INFO:django.server: "GET /notice/new/ HTTP/1.1" 200 3223 (2018-08-10 15:34:15; basehttp.py:124)
+INFO:django.server: "POST /notice/new/ HTTP/1.1" 302 0 (2018-08-10 15:34:20; basehttp.py:124)
+INFO:django.server: "GET /3/ HTTP/1.1" 200 2915 (2018-08-10 15:34:20; basehttp.py:124)
+WARNING:django.server: "GET /favicon.ico HTTP/1.1" 404 3950 (2018-08-10 15:34:20; basehttp.py:124)
+INFO:django.server: "GET / HTTP/1.1" 200 4052 (2018-08-10 15:34:21; basehttp.py:124)
+INFO:django.server: "GET /1/ HTTP/1.1" 200 3230 (2018-08-10 15:34:25; basehttp.py:124)
+INFO:django.server: "POST /set_executor/1/ HTTP/1.1" 302 0 (2018-08-10 15:34:27; basehttp.py:124)
+INFO:django.server: "GET /1/ HTTP/1.1" 200 2983 (2018-08-10 15:34:27; basehttp.py:124)
+INFO:django.server: "GET / HTTP/1.1" 200 4052 (2018-08-10 15:34:29; basehttp.py:124)
+INFO:django.server: "GET /your_tasks/ HTTP/1.1" 200 3497 (2018-08-10 15:34:31; basehttp.py:124)
+INFO:django.server: "GET /your_notices/ HTTP/1.1" 200 3403 (2018-08-10 15:34:34; basehttp.py:124)
+INFO:django.server: "GET /your_tasks/ HTTP/1.1" 200 3497 (2018-08-10 15:34:35; basehttp.py:124)
+INFO:django.server: "GET /accounts/logout/ HTTP/1.1" 200 2024 (2018-08-10 15:34:37; basehttp.py:124)
+INFO:django.server: "GET /accounts/login/ HTTP/1.1" 200 2872 (2018-08-10 15:34:38; basehttp.py:124)
+INFO:django.server: "POST /accounts/login/ HTTP/1.1" 302 0 (2018-08-10 15:34:48; basehttp.py:124)
+INFO:django.server: "GET / HTTP/1.1" 200 4056 (2018-08-10 15:34:48; basehttp.py:124)

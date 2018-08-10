@@ -213,10 +213,17 @@ class SetExecutorFormTest(TransactionTestCase):
         self.user.save()
         return self.user
 
-    def test_set_executor(self):
+    def test_set_executor_async(self):
         user1 = self.create_user(username="testuser1", password="12345")
         user2 = self.create_user(username='testuser2', password='12345')
-        self.client.login(username='testuser2', password='12345')
+        user3 = self.create_user(username='testuser3', password='12345')
+        user2_login = self.client.login(username='testuser2', password='12345')
+        user3_login = self.client.login(username='testuser3', password='12345')
+
+        thread1 = Thread(target=user3_login)
+        thread2 = Thread(target=user2_login)
+        thread1.start()
+        thread2.start()
 
         notice = create_notice(author=user1, title="Notice.", body="Notice.", done=False, price=100, executor=None, days=0)
 
@@ -225,7 +232,7 @@ class SetExecutorFormTest(TransactionTestCase):
         self.assertEqual(response.status_code, 302)
 
         notice.refresh_from_db()
-        self.assertEqual(notice.executor, user2)
+        self.assertEqual(notice.executor, user3)
 
 class DoneFormTest(TransactionTestCase):
 

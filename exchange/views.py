@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import get_object_or_404, render, redirect, render_to_response
-from django.http import HttpResponseRedirect
+from django.http import HttpResponse
 from django.core.urlresolvers import reverse
 from django.views import generic
 
@@ -116,8 +116,11 @@ class SetExecutorView(generic.UpdateView):
     
     @transaction.atomic
     def form_valid(self, form):
-        form.instance.executor = User.objects.select_for_update().get(id=self.request.user.id)
-        return super(SetExecutorView, self).form_valid(form)
+        if form.instance.executor == None:
+            form.instance.executor = User.objects.select_for_update().get(id=self.request.user.id)
+            return super(SetExecutorView, self).form_valid(form)
+        else:
+            return HttpResponse("Again")
     
     @transaction.atomic
     def get_success_url(self):
