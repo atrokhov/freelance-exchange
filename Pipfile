@@ -1,0 +1,19 @@
+[[source]]
+verify_ssl = true
+name = "pypi"
+url = "https://pypi.org/simple"
+
+[requires]
+python_version = "3.5"
+
+[dev-packages]
+
+[packages]
+requests = "==2.19.1"
+django-registration = "==2.4.1"
+djangorestframework = "==3.8.2"
+django-celery-beat = "*"
+"psycopg2-binary" = "*"
+django-money = "*"
+Django = "==1.11"
+django_celery_results = "*"
