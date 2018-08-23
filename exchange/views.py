@@ -58,7 +58,7 @@ class NewView(generic.CreateView):
     def form_valid(self, form):
         form.instance.author = User.objects.select_for_update().get(id=self.request.user.id)
         return super(NewView, self).form_valid(form)
-    
+
     @transaction.atomic
     def get_success_url(self):
         return reverse("exchange:detail", kwargs={'pk': self.object.pk})
@@ -72,16 +72,24 @@ class EditView(generic.UpdateView):
     def form_valid(self, form):
         form.instance.author = User.objects.select_for_update().get(id=self.request.user.id)
         return super(EditView, self).form_valid(form)
-    
+
     @transaction.atomic
     def get_success_url(self):
         return reverse("exchange:detail", kwargs={'pk': self.object.pk})
+
+class UserNoticesView(generic.ListView):
+    template_name = ProfileForm
+    context_object_name = 'notices'
+
+    @transaction.atomic
+    def get_queryset(self):
+        return Notice.objects.prefetch_related().filter(author=request.user).only('title', 'executor', 'pub_date')
 
 class AddMoneyView(generic.UpdateView):
     model = Profile
     form_class = ProfileForm
     template_name = "exchange/add_money.html"
-    
+
     @transaction.atomic
     def get_success_url(self):
         return reverse("exchange:index")
@@ -96,7 +104,7 @@ class SetExecutorView(generic.UpdateView):
     model = Notice
     form_class = SetExecutorForm
     template_name = "exchange/detail.html"
-    
+
     @transaction.atomic
     def form_valid(self, form):
         if form.instance.executor == None:
@@ -104,7 +112,7 @@ class SetExecutorView(generic.UpdateView):
             return super(SetExecutorView, self).form_valid(form)
         else:
             return HttpResponse("Again")
-    
+
     @transaction.atomic
     def get_success_url(self):
         return reverse("exchange:detail", kwargs={'pk': self.object.pk})
