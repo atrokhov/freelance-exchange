@@ -85,6 +85,14 @@ class UserNoticesView(generic.ListView):
     def get_queryset(self):
         return Notice.objects.prefetch_related().filter(author=self.request.user).only('title', 'executor', 'pub_date')
 
+class UserTasksView(generic.ListView):
+    template_name = ProfileForm
+    context_object_name = 'notices'
+
+    @transaction.atomic
+    def get_queryset():
+        return Notice.objects.prefetch_related().filter(executor=self.request.user).only('author', 'title', 'pub_date')
+
 class AddMoneyView(generic.UpdateView):
     model = Profile
     form_class = ProfileForm
