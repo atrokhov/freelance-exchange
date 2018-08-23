@@ -11,7 +11,7 @@ from django.db.models import F
 
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
-from serializers import UserSerializer, GroupSerializer, NoticeSerializer, ProfileSerializer
+from .serializers import UserSerializer, GroupSerializer, NoticeSerializer, ProfileSerializer
 
 
 from .models import Notice, Profile
@@ -83,7 +83,7 @@ class UserNoticesView(generic.ListView):
 
     @transaction.atomic
     def get_queryset(self):
-        return Notice.objects.prefetch_related().filter(author=request.user).only('title', 'executor', 'pub_date')
+        return Notice.objects.prefetch_related().filter(author=self.request.user).only('title', 'executor', 'pub_date')
 
 class AddMoneyView(generic.UpdateView):
     model = Profile

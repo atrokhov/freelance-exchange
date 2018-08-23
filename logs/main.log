@@ -2089,3 +2089,283 @@ Traceback (most recent call last):
   File "/Library/Python/2.7/site-packages/django/views/generic/list.py", line 45, in get_queryset
     'cls': self.__class__.__name__
 ImproperlyConfigured: UserNoticesView is missing a QuerySet. Define UserNoticesView.model, UserNoticesView.queryset, or override UserNoticesView.get_queryset().
+ERROR:django.request: Internal Server Error: /2/ (2018-08-23 19:44:41; exception.py:135)
+Traceback (most recent call last):
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/response.py", line 107, in render
+    self.content = self.rendered_content
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/response.py", line 84, in rendered_content
+    content = template.render(context, self._request)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/backends/django.py", line 66, in render
+    return self.template.render(context)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/base.py", line 207, in render
+    return self._render(context)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/test/utils.py", line 107, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/test/utils.py", line 107, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/defaulttags.py", line 322, in render
+    return nodelist.render(context)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/urls/base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/urls/resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'your_tasks' not found. 'your_tasks' is not a valid view function or pattern name.
+ERROR:django.request: Internal Server Error: /12/ (2018-08-23 19:44:42; exception.py:135)
+Traceback (most recent call last):
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/response.py", line 107, in render
+    self.content = self.rendered_content
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/response.py", line 84, in rendered_content
+    content = template.render(context, self._request)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/backends/django.py", line 66, in render
+    return self.template.render(context)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/base.py", line 207, in render
+    return self._render(context)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/test/utils.py", line 107, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/test/utils.py", line 107, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/defaulttags.py", line 322, in render
+    return nodelist.render(context)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/urls/base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/urls/resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'your_tasks' not found. 'your_tasks' is not a valid view function or pattern name.
+ERROR:django.request: Internal Server Error: /your_notices/ (2018-08-23 19:44:42; exception.py:135)
+Traceback (most recent call last):
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/views/generic/list.py", line 159, in get
+    self.object_list = self.get_queryset()
+  File "/usr/lib/python3.5/contextlib.py", line 30, in inner
+    return func(*args, **kwds)
+  File "/home/baurzhan/maddevs/freelance-exchange/exchange/views.py", line 86, in get_queryset
+    return Notice.objects.prefetch_related().filter(author=request.user).only('title', 'executor', 'pub_date')
+NameError: name 'request' is not defined
+ERROR:django.request: Internal Server Error: /your_notices/ (2018-08-23 19:44:43; exception.py:135)
+Traceback (most recent call last):
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/views/generic/list.py", line 159, in get
+    self.object_list = self.get_queryset()
+  File "/usr/lib/python3.5/contextlib.py", line 30, in inner
+    return func(*args, **kwds)
+  File "/home/baurzhan/maddevs/freelance-exchange/exchange/views.py", line 86, in get_queryset
+    return Notice.objects.prefetch_related().filter(author=request.user).only('title', 'executor', 'pub_date')
+NameError: name 'request' is not defined
+ERROR:django.request: Internal Server Error: /your_notices/ (2018-08-23 19:44:43; exception.py:135)
+Traceback (most recent call last):
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/views/generic/list.py", line 159, in get
+    self.object_list = self.get_queryset()
+  File "/usr/lib/python3.5/contextlib.py", line 30, in inner
+    return func(*args, **kwds)
+  File "/home/baurzhan/maddevs/freelance-exchange/exchange/views.py", line 86, in get_queryset
+    return Notice.objects.prefetch_related().filter(author=request.user).only('title', 'executor', 'pub_date')
+NameError: name 'request' is not defined
+ERROR:django.request: Internal Server Error: /2/ (2018-08-23 19:45:37; exception.py:135)
+Traceback (most recent call last):
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/response.py", line 107, in render
+    self.content = self.rendered_content
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/response.py", line 84, in rendered_content
+    content = template.render(context, self._request)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/backends/django.py", line 66, in render
+    return self.template.render(context)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/base.py", line 207, in render
+    return self._render(context)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/test/utils.py", line 107, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/test/utils.py", line 107, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/defaulttags.py", line 322, in render
+    return nodelist.render(context)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/urls/base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/urls/resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'your_tasks' not found. 'your_tasks' is not a valid view function or pattern name.
+ERROR:django.request: Internal Server Error: /12/ (2018-08-23 19:45:37; exception.py:135)
+Traceback (most recent call last):
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/response.py", line 107, in render
+    self.content = self.rendered_content
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/response.py", line 84, in rendered_content
+    content = template.render(context, self._request)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/backends/django.py", line 66, in render
+    return self.template.render(context)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/base.py", line 207, in render
+    return self._render(context)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/test/utils.py", line 107, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/test/utils.py", line 107, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/defaulttags.py", line 322, in render
+    return nodelist.render(context)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/urls/base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/urls/resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'your_tasks' not found. 'your_tasks' is not a valid view function or pattern name.
+ERROR:django.request: Internal Server Error: /your_notices/ (2018-08-23 19:45:38; exception.py:135)
+Traceback (most recent call last):
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/response.py", line 107, in render
+    self.content = self.rendered_content
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/response.py", line 82, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/response.py", line 64, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/loader.py", line 53, in select_template
+    raise TemplateDoesNotExist(', '.join(template_name_list), chain=chain)
+TypeError: sequence item 0: expected str instance, ModelFormMetaclass found
+ERROR:django.request: Internal Server Error: /your_notices/ (2018-08-23 19:45:38; exception.py:135)
+Traceback (most recent call last):
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/response.py", line 107, in render
+    self.content = self.rendered_content
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/response.py", line 82, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/response.py", line 64, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/loader.py", line 53, in select_template
+    raise TemplateDoesNotExist(', '.join(template_name_list), chain=chain)
+TypeError: sequence item 0: expected str instance, ModelFormMetaclass found
+ERROR:django.request: Internal Server Error: /your_notices/ (2018-08-23 19:45:39; exception.py:135)
+Traceback (most recent call last):
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/response.py", line 107, in render
+    self.content = self.rendered_content
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/response.py", line 82, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/response.py", line 64, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/baurzhan/.local/share/virtualenvs/freelance-exchange-7e6OEzVI/lib/python3.5/site-packages/django/template/loader.py", line 53, in select_template
+    raise TemplateDoesNotExist(', '.join(template_name_list), chain=chain)
+TypeError: sequence item 0: expected str instance, ModelFormMetaclass found
