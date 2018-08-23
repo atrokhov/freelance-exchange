@@ -77,14 +77,6 @@ class EditView(generic.UpdateView):
     def get_success_url(self):
         return reverse("exchange:detail", kwargs={'pk': self.object.pk})
 
-class UserNoticesView(generic.ListView):
-    template_name = 'exchange/user_notices.html'
-    context_object_name = 'notices'
-
-    @transaction.atomic
-    def get_queryset(self):
-        return Notice.objects.prefetch_related().filter(author=self.request.user).only('title', 'executor', 'pub_date')
-
 class AddMoneyView(generic.UpdateView):
     model = Profile
     form_class = ProfileForm
@@ -99,15 +91,6 @@ class AddMoneyView(generic.UpdateView):
         form.instance.user = User.objects.select_for_update().get(id=self.request.user.id)
         form.instance.current_balance = F('current_balance') + form.instance.transaction_sum
         return super(AddMoneyView, self).form_valid(form)
-
-
-class UserTasksView(generic.ListView):
-    template_name = 'exchange/user_tasks.html'
-    context_object_name = 'notices'
-
-    @transaction.atomic
-    def get_queryset(self):
-        return Notice.objects.prefetch_related().filter(executor=self.request.user).only('author', 'title', 'pub_date')
 
 class SetExecutorView(generic.UpdateView):
     model = Notice
